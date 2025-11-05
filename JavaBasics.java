@@ -1,4 +1,20 @@
+import java.util.*;
 public class JavaBasics {
+
+    public static void getlargestandsmallest(int a[], int n){
+        int largest=Integer.MIN_VALUE;
+        int smallest=Integer.MAX_VALUE;
+        for(int i=0;i<n;i++){
+            if(a[i]>largest){
+                largest=a[i];
+            }
+            if(a[i]<smallest){
+                smallest=a[i];
+            }
+        }
+        System.out.println("Largest: "+largest);
+        System.out.println("Smallest: "+smallest);
+    }
 
     public static void bintodecimal(int n){
         int decimal=0;
@@ -28,5 +44,7 @@ public class JavaBasics {
         System.out.println("How are you");
         bintodecimal(101);
         decimaltobin(5);
+        int a[]={3,5,7,2,8,1};
+        getlargestandsmallest(a, a.length);
     }
 }
