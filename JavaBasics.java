@@ -82,6 +82,60 @@ public class JavaBasics {
             System.out.println(" ");
         }
     }
+
+    public static void printsubarrays(int a[]){
+        int Totalsubarrays=(a.length*(a.length+1))/2;
+        System.out.println("Total subarrays: "+Totalsubarrays);
+        for(int i=0;i<a.length;i++){
+            for(int j=i;j<a.length;j++){
+                for(int k=i;k<=j;k++){
+                    System.out.print(a[k]+" ");
+                }
+                System.out.println();
+            }
+            System.out.println();
+        }
+    }
+    public static void maxsubarraysum(int a[]){
+        int maxsum=Integer.MIN_VALUE;
+        for(int i=0;i<a.length;i++){
+            for(int j=i;j<a.length;j++){
+                int sum=0;
+                for(int k=i;k<=j;k++){
+                    sum+=a[k];
+                }
+                if(sum>maxsum){
+                    maxsum=sum;
+                }
+            }
+        }
+        System.out.println("Maximum subarray sum: "+maxsum);
+    }
+    public static void prefixsums(int a[]){
+        int prefixsum[]=new int[a.length];
+        prefixsum[0]=a[0];
+        for(int i=1;i<a.length;i++){
+            prefixsum[i]=prefixsum[i-1]+a[i];
+        }
+        for(int i=0;i<prefixsum.length;i++){
+            System.out.print(prefixsum[i]+" ");
+        }
+        System.out.println();
+    }
+    public static void  kadansalgorithm(int a[]){
+        int currentsum=0;
+        int maxsum=Integer.MIN_VALUE;
+        for(int i=0;i<a.length;i++){
+            currentsum+=a[i];
+            if(currentsum<0){
+                currentsum=0;
+            }
+            maxsum=Math.max(maxsum, currentsum);
+        }
+        System.out.println("Maximum subarray sum using Kadane's Algorithm: "+maxsum);
+    }
+
+
     public static void main(String []args){
         System.out.println("Hello");
         System.out.println("How are you");
@@ -100,5 +154,7 @@ public class JavaBasics {
         sc.close();
         System.out.println();
         printpairs(a);
+        printsubarrays(a);
+        System.out.println("This is the end");
     }
 }
