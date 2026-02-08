@@ -1,7 +1,0 @@
-========== STUDENT RECORDS ==========
-
-Roll No    Name                 Marks
---------------------------------------------
-1          Ayush                98.00
-2          Alok                 88.00
-3          Rameswar             90.00
